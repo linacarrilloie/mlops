@@ -11,7 +11,7 @@ from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 from keras.optimizers import RMSprop
-
+from keras.optimizers import adam
 
 batch_size = 128
 num_classes = 10
@@ -43,7 +43,7 @@ model.add(Dense(10, activation='softmax'))
 model.summary()
 
 model.compile(loss='categorical_crossentropy',
-              optimizer=RMSprop(),
+              optimizer='adam',
               metrics=['accuracy'])
 
 history = model.fit(x_train, y_train,
